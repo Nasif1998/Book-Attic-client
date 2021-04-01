@@ -1,10 +1,12 @@
-import React from 'react';
+
 import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 
 const Book = (props) => {
     const { bookName, authorName, price, imageURL, _id } = props.book;
+    
     // console.log(_id);
 
     const bookStyle = {

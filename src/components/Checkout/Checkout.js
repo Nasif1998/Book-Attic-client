@@ -34,15 +34,20 @@ const Checkout = () => {
     const { bookName, authorName, price } = book;
     // console.log(bookName);
     const handleCheckOut = () => {
-        const newOrder = {...loggedInUser, ...selectedDate, bookName, authorName};
-        fetch(`http://localhost:6066/checkout/addOrdering`, {
+        const newOrder = {...loggedInUser,  bookName, authorName, orderTime: new Date()};
+        
+        fetch('http://localhost:6066/addOrder', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(newOrder)
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data){
+                alert('order placed');
+            }
         })
     }
     return (
@@ -62,26 +67,9 @@ const Checkout = () => {
                 </tr>
             </table>
 
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid container justify="space-around">
-                    <KeyboardDatePicker
-                        disableToolbar
-                        variant="inline"
-                        format="MM/dd/yyyy"
-                        margin="normal"
-                        id="date-picker-inline"
-                        label="Date picker inline"
-                        value={selectedDate}
-                        onChange={handleDateChange}
-                        KeyboardButtonProps={{
-                            'aria-label': 'change date',
-                        }}
-                    />
-                </Grid>
-                <Button style={{textAlign: 'center', marginLeft: '50%'}} onClick={handleCheckOut} variant="contained" color="primary">
+            <Button style={{textAlign: 'center', marginLeft: '50%'}} onClick={handleCheckOut} variant="contained" color="primary">
                     CheckOut
                 </Button> 
-            </MuiPickersUtilsProvider>
 
         </div>
     );

@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
     return (
         <div>
-            <h1 style={{color: 'yellowgreen'}} className="header">Book Shop</h1>
+            <h1 style={{color: 'yellowgreen'}} className="header">Book Attic</h1>
             <nav className="nav">
                 <ul>
                     <li>
