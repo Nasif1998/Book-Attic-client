@@ -23,7 +23,7 @@ const Checkout = () => {
     const [book, setBook] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:6066/checkout/${_id}`)
+        fetch(`https://banana-custard-22139.herokuapp.com/checkout/${_id}`)
             .then(res => res.json())
             .then(data => setBook(data))
     }, [_id])
@@ -36,7 +36,7 @@ const Checkout = () => {
     const handleCheckOut = () => {
         const newOrder = {...loggedInUser,  bookName, authorName, orderTime: new Date()};
         
-        fetch('http://localhost:6066/addOrder', {
+        fetch('https://banana-custard-22139.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

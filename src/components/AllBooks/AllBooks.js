@@ -6,7 +6,7 @@ const AllBooks = (props) => {
     const history = useHistory();
 
     const deleteEvent = (id, event) => {
-        const url = `http://localhost:6066/deleteEvent/${id}`
+        const url = `https://banana-custard-22139.herokuapp.com/deleteEvent/${id}`
         fetch(url, {
             method: 'DELETE'
         })

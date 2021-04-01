@@ -13,7 +13,7 @@ const AddBook = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url = `http://localhost:6066/addBook`;
+        const url = `https://banana-custard-22139.herokuapp.com/addBook`;
         
         console.log(eventData)
 
