@@ -9,7 +9,7 @@ const OrderDetails = (props) => {
                 <summary>Order of {bookName}</summary>
                 <p>Order ID: {_id}</p>
                 <p>Author Name: {authorName}</p>
-                <p>{price}</p>
+                <p>Price: {price}$</p>
                 <p>Time: {orderTime}</p>
             </details>
         </div>
