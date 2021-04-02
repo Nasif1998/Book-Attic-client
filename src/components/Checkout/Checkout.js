@@ -34,7 +34,7 @@ const Checkout = () => {
     const { bookName, authorName, price } = book;
     // console.log(bookName);
     const handleCheckOut = () => {
-        const newOrder = {...loggedInUser,  bookName, authorName, orderTime: new Date()};
+        const newOrder = {...loggedInUser,  bookName, authorName, price, orderTime: new Date()};
         
         fetch('https://banana-custard-22139.herokuapp.com/addOrder', {
             method: 'POST',
