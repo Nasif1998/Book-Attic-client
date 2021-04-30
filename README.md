@@ -9,6 +9,7 @@ This is basically a online books ordering service. In my project I tried to show
 4. You can also see your previous ordered books.
 5. Admin can add and remove books from database and home page.
 
+Technologies: React.js, React-Router, Node.js, Express.js, MongoDB, Heroku, Firebase
 
 ## Live Link:
 [Click-here](https://book-shop-80fa7.web.app/)
